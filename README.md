@@ -9,7 +9,7 @@
 
 ## 当前状态
 
-实验阶段。协议会在实际项目中持续调试与调整；版本采用 npm 的 prerelease（例如 `0.1.0-beta.0`）标记。
+实验阶段。协议会在实际项目中持续调试与调整；Git 提交记录变更历史，Git tag 标记稳定版本。
 
 ## 结构
 
@@ -20,43 +20,52 @@ aTa/
 │   ├── master.md            # master 的职责与工作流
 │   ├── worker.md            # worker 的职责与工作流
 │   └── docs.md              # 项目文档的职责边界与审查规范
-└── package.json             # npm / Pi package 元数据
+├── README.md
+└── LICENSE
 ```
 
-## 使用
+## 安装
 
-将整个 `aTa` 目录放入 Agent 框架扫描的 skills 目录，或将该目录链接到对应目录。使用时由用户明确指定本轮身份：
+本 skill 通过 [`skills`](https://github.com/vercel-labs/skills) CLI 从 GitHub 安装：
+
+```powershell
+npx skills@latest add spikeRHCgit/ata-skill
+```
+
+安装器会让你选择目标 Agent、全局或项目范围，以及 symlink 或 copy 安装方式。查看可安装内容而不修改本机：
+
+```powershell
+npx skills@latest add spikeRHCgit/ata-skill --list
+```
+
+使用时由用户明确指定本轮身份：
 
 - `master`：读取 [`references/master.md`](references/master.md)
 - `worker`：读取 [`references/worker.md`](references/worker.md)
 
 身份未明确时，Agent 应先询问：“本轮我是 master 还是 worker？”
 
-## 本地开发
+## 维护与更新
 
-以此仓库作为唯一源码目录。不同 Agent 的 skill 目录应通过 Windows junction 或符号链接指向该目录，避免维护多份副本。修改后重启对应 Agent，即可重新发现最新 skill 内容。
-
-检查未来 npm 发布包会包含哪些文件：
+维护者在本仓库修改、提交并推送：
 
 ```powershell
-npm run check-package
+git add .
+git commit -m "调整协作协议"
+git push
 ```
 
-## npm 发布
-
-当前 `package.json` 中的 `private: true` 用于避免实验版本被误发布。准备公开发布前：
-
-1. 将包名改为你自己的 npm scope，例如 `@your-npm-name/ata-skill`。
-2. 删除 `private` 字段。
-3. 登录并发布：
+已安装者通过以下命令拉取最新 skill：
 
 ```powershell
-npm login
-npm version prerelease --preid=beta
-npm publish --access public
+npx skills@latest update ata
 ```
 
-详见 npm 官方文档与本仓库的提交历史。
+若安装时选择了全局范围，则更新时加 `-g`：
+
+```powershell
+npx skills@latest update ata -g
+```
 
 ## 许可证
 
