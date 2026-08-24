@@ -1,7 +1,6 @@
 {
-  "name": "ata-skill",
+  "name": "@spikes/ata-skill",
   "version": "0.1.0-beta.0",
-  "private": true,
   "license": "MIT",
   "description": "A cross-agent master/worker collaboration protocol for project planning, handoff, review, and document maintenance.",
   "repository": {
