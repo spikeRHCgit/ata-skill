@@ -19,9 +19,10 @@
 
 - `docs/STATUS.md`：按 `references/docs/status.md` 的模板建，当前主线第一行写 `初始化`，第二行写当前进度。
 - `docs/decisions.md`：按 `references/docs/decisions.md` 的模板，只建标题和说明。
+- `docs/scratchpad.md`：按 `references/docs/scratchpad.md` 的模板建。
 - `docs/PROJECT_PLAN.md`：只写各节标题，内容在第 5 步写。
-- `AGENTS.md`：项目定位暂时留空，先写文档入口。
-- `docs/ata/` 下的实践手册和 notes：按 `references/docs.md`「docs/ata/ 项目实践记忆」的初始内容建。
+- `AGENTS.md`：按 `references/docs/agents-md.md` 的模板建，项目定位暂时留空；会用到 Claude Code 时，同时建 `CLAUDE.md`。
+- `docs/ata/` 下的两份实践手册和收件箱：按 `references/docs/practices.md` 的模板建。
 - 已有项目：已经存在的文件不覆盖，只补缺的部分；同名文件用途不同时，问用户怎么处理。
 
 建好后提交，只暂存这些文档。
@@ -30,31 +31,32 @@
 
 ## 3. 摸底（只用于已有项目）
 
-派一张只读摸底卡，让 worker 整理项目结构、构建和测试命令、现有文档、未完成的工作。卡片按 `references/docs/task-card.md` 写，主线字段写「初始化」。你只读它的结论，不自己通读。
+派一张摸底卡，让 worker 整理项目结构、构建和测试命令、现有文档、未完成的工作，写在汇报里。项目有源码时，同一张卡按 `references/docs/module-map.md` 生成 `docs/module_map.md`：写入范围只有这一个文件；项目里已经有地图的，不覆盖，在汇报里说明它和写法的差距。卡片按 `references/docs/task-card.md` 写，主线字段写「初始化」。你只读它的结论，不自己通读。
 
-完成标准：摸底卡已验收，你掌握了写总计划所需的现状。
+完成标准：摸底卡已验收，你掌握了写总计划所需的现状；项目有源码时，也有了源码地图。
 
 ## 4. 对齐方向
 
 和用户讨论：项目定位、目标用户和场景、要达成的目标、明确不做的事、技术路线、阶段划分。
 
-一次只问一个问题，并给出你的推荐，追问到足以写计划为止。环境里有专门的追问类 skill（如 grilling）时，可以使用。用户的决定当场追加进 `docs/decisions.md`，STATUS 第二行同步写到哪一步。
+一次只问一个问题，并给出你的推荐，追问到足以写计划为止。环境里有专门的追问类 skill（如 grilling）时，可以使用。用户的决定当场追加进 `docs/decisions.md`；其余确认的内容当场记进 `docs/scratchpad.md`，包括以后各阶段的需求。STATUS 第二行同步写到哪一步。
 
 完成标准：你向用户确认完毕定位、范围、技术路线和阶段划分，并有充足的把握撰写符合要求的项目计划。
 
 ## 5. 写总计划
 
-- `docs/PROJECT_PLAN.md`：写法见 `references/docs.md`。路线图的每个阶段带状态（未开始、进行中、已完成），第一条主线标为进行中。已有项目写现状和后续路线，做到一半的工作作为第一条主线。
+- `docs/PROJECT_PLAN.md`：按 `references/docs/project-plan.md` 写，第一条主线在路线图里标为进行中。已有项目写现状和后续路线，做到一半的工作作为第一条主线。速记本里以后各阶段的需求，写进对应阶段的需求简报。
 - `AGENTS.md`：补上项目定位。
+- `docs/scratchpad.md`：内容都整理进正式文档后，清空到只剩模板。
 - `docs/STATUS.md`：当前主线第一行改为 `<第一条主线> · 规划中 · 计划：待写`。
 
 交给用户审查，按意见修改后提交。
 
-完成标准：总计划、决定记录和 STATUS 通过用户审查并已提交；STATUS 第一行可以直接路由到 `workflows/planning.md`。
+完成标准：总计划、决定记录和 STATUS 通过用户审查并已提交；速记本已清空；STATUS 第一行可以直接路由到 `workflows/planning.md`。
 
 ## 6. 可选：Codex 压缩恢复提醒
 
-master 在 Codex 中运行时，向用户提议安装这个 hook：每次上下文压缩后，Codex 自动提醒你重读 master.md 和 STATUS。
+master 在 Codex 中运行时，向用户提议安装这个 hook：每次上下文压缩后，Codex 自动提醒你重读 master.md、STATUS 和速记本。
 
 - 文件：`assets/codex-hooks.json`，复制为项目的 `.codex/hooks.json`；项目已有这个文件时，把其中的 `SessionStart` 一项合并进去。
 - 这是配置改动：由用户自己复制，或者并入第一张施工卡。

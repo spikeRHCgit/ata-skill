@@ -15,11 +15,15 @@
 
 ```text
 aTa/
-├── SKILL.md                 # Skill 入口与通用协作协议
+├── SKILL.md                 # Skill 入口：确认身份，读取对应的角色卡
 ├── references/
-│   ├── master.md            # master 的职责与工作流
-│   ├── worker.md            # worker 的职责与工作流
-│   └── docs.md              # 项目文档的职责边界与审查规范
+│   ├── master.md            # master 角色卡
+│   ├── worker.md            # worker 角色卡
+│   ├── docs.md              # 项目文档总览：有哪些文档、各放什么
+│   └── docs/                # 每份项目文档的写法
+├── workflows/               # master 的工作流：初始化、规划、施工、计划外工作
+├── assets/
+│   └── codex-hooks.json     # Codex 上下文压缩后的提醒
 ├── README.md
 └── LICENSE
 ```
