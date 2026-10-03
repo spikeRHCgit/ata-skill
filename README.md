@@ -42,12 +42,12 @@ npx skills@latest add spikeRHCgit/ata-skill
 npx skills@latest add spikeRHCgit/ata-skill --list
 ```
 
-使用时由用户明确指定本轮身份：
+使用时告诉 Agent 它的身份：
 
-- `master`：读取 [`references/master.md`](references/master.md)
-- `worker`：读取 [`references/worker.md`](references/worker.md)
+- master：例如对它说「你是 ata 的 master」，它会读取 [`references/master.md`](references/master.md)。
+- worker：master 派工时会给出转手的话，例如「你是 ata 的 worker。读取 `docs/tasks/T-001.md` 并执行。」，把它发给 worker 所在的 Agent，它会读取 [`references/worker.md`](references/worker.md) 和这张任务卡。
 
-身份未明确时，Agent 应先询问：“本轮我是 master 还是 worker？”
+身份没有指明时，Agent 会先问：“这次我是 ata 的 master 还是 worker？”
 
 ## 维护与更新
 
