@@ -1,6 +1,6 @@
 # AGENTS.md 写法
 
-`AGENTS.md` 是 agent 会话启动时自动读取的项目说明。master、worker，以及不使用 ata 的会话都会读到它，所以只写对所有会话都成立的内容，并且要短，控制在约 50 行以内。由 master 维护；新增或修改工程原则前，先经用户确认。
+`AGENTS.md` 是 agent 会话启动时自动读取的项目说明。master、worker，以及不使用 ata 的会话都会读到它，所以只写对所有会话都成立的内容，并且要短，控制在约 50 行左右。由 master 维护；新增或修改工程原则前，先经用户确认。
 
 ## 模板
 
@@ -16,15 +16,17 @@
 | 项目目标、路线图、范围、架构 | `docs/PROJECT_PLAN.md` |
 | 当前进度 | `docs/STATUS.md` |
 | 已确认的决定和理由 | `docs/decisions.md` |
+...
 
 STATUS、计划、决定记录和速记本由 ata 的 master 维护，其他会话只读。
 
 ## 工程原则
 
 - <每个会话都必须遵守的规则>
+
 ```
 
-## 各节写法
+## 写什么
 
 - **项目定位**：一两句。初始化时先留空，写总计划时补上。
 - **文档入口**：一类信息一行，指向它唯一的主文档。建立按需文档（源码地图、README、领域规格）或登记项目原有的文档（如代码规范）时加一行；文档删除或改名时同步修改。
@@ -37,10 +39,6 @@ STATUS、计划、决定记录和速记本由 ata 的 master 维护，其他会�
 
 检验：「这条规则对 master、worker 和不用 ata 的会话都成立吗？只对一个角色成立的，写进 `docs/ata/` 下对应的实践手册。」
 
-## CLAUDE.md
-
-项目也用 Claude Code 时，在根目录放 `CLAUDE.md`，内容只有一行 `@AGENTS.md`：Claude Code 会把它展开成 AGENTS.md 的内容。不复制一套规则。其他 agent 的入口文件同理。
-
 ## 不写什么
 
 - 启动步骤和角色流程：ata 的角色卡有自己的启动步骤。写进 AGENTS.md，worker 会话也会读到，和 worker.md 冲突，例如让 worker 去读它不需要的 STATUS。
@@ -49,6 +47,10 @@ STATUS、计划、决定记录和速记本由 ata 的 master 维护，其他会�
 - 命令手册：在 README。
 - 文件职责：在源码地图。
 - 事故经过和经验的来龙去脉：提炼成一条规则，经过留在 Git 历史里。
+
+## CLAUDE.md
+
+项目也用 Claude Code 时，在根目录放 `CLAUDE.md`，内容只有一行 `@AGENTS.md`：Claude Code 会把它展开成 AGENTS.md 的内容。不复制一套规则。其他 agent 的入口文件同理。
 
 ## 补建
 
