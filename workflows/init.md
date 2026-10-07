@@ -1,6 +1,6 @@
 # 初始化workflow：建立项目文档，对齐方向，写总计划
 
-适用：新建的项目，或者第一次使用 ata 的已有项目；以及 STATUS 当前主线为「初始化」，即上次初始化还没做完。已经在用 ata、只是缺少某份文档的项目不走本流程，按 master.md 第 4 节补建。
+使用场景：新建的项目，或者第一次使用 ata 的已有项目；以及 STATUS 当前主线为「初始化」，即上次初始化还没做完。已经在用 ata、只是缺少某份文档的项目不走本流程，按 master.md 第 4 节补建。
 
 上次初始化没做完时，按 STATUS 写的进度从对应的步骤接着做。
 
@@ -50,10 +50,10 @@
 
 流程：
 
-1.预先定位到`docs/scratchpad.md`，向用户提问；
-2.一次只问两到三个问题，每个问题给出你的推荐方案，但不要擅自替用户做决定；
-3.每轮问题得到用户的回答后，立刻记录到`docs/scratchpad.md`中，再继续下一轮的针对性的问答；
-4.一直提问到能够系统性的完整回答上面需要确认的信息。
+1. 预先定位到`docs/scratchpad.md`，向用户提问；
+2. 一次只问两到三个问题，每个问题给出你的推荐方案，但不要擅自替用户做决定；
+3. 每轮问题得到用户的回答后，立刻记录到`docs/scratchpad.md`中，再继续下一轮的针对性的问答；
+4. 一直提问到能够系统性的完整回答上面需要确认的信息。
 
 tips: 环境里有专门的追问类 skill（如 grilling）时，积极调用。
 
@@ -70,11 +70,11 @@ tips: 环境里有专门的追问类 skill（如 grilling）时，积极调用�
 
 流程：
 
-1.基于速记本确认下的信息，按 `references/docs/project-plan.md`的指导要求，开始撰写`docs/PROJECT_PLAN.md`；
-2.将撰写好的`docs/PROJECT_PLAN.md`交由用户审查，直至通过；
-3.在`docs/PROJECT_PLAN.md`通过用户审查后，将`docs/scratchpad.md`进行归档冻结；
-4.更新`AGENTS.md`，补上项目定位；
-5.更新`docs/STATUS.md`，更新项目实时状态；
+1. 基于速记本确认下的信息，按 `references/docs/project-plan.md`的指导要求，开始撰写`docs/PROJECT_PLAN.md`；
+2. 将撰写好的`docs/PROJECT_PLAN.md`交由用户审查，直至通过；
+3. 在`docs/PROJECT_PLAN.md`通过用户审查后，将`docs/scratchpad.md`进行归档冻结；
+4. 更新`AGENTS.md`，补上项目定位；
+5. 更新`docs/STATUS.md`，更新项目实时状态；
 
 ## 6. 待命
 
