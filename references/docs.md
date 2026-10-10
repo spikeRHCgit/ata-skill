@@ -19,7 +19,9 @@
 | `docs/STATUS.md` | 当前状态 | master | `references/docs/status.md` |
 | `docs/decisions.md` | 用户确认的决定和理由 | master | `references/docs/decisions.md` |
 | `docs/scratchpad.md` | 讨论中已确认、还没整理进正式文档的内容 | master；用户也可以直接改 | `references/docs/scratchpad.md` |
-| `docs/tasks/T-###.md` | 任务卡；目录在派第一张卡时建 | master 写要求和验收，worker 写汇报 | `references/docs/task-card.md` |
+| `docs/tasks/T-###/T-###.md` | 任务定义、当前状态和最终收口摘要；目录在派卡时建 | master | `references/docs/task-card.md` |
+| `docs/tasks/T-###/worker-NN.md` | 本轮工作汇报 | worker | `references/worker.md` |
+| `docs/tasks/T-###/review-NN.md`、`docs/tasks/T-###/rework-NN-request.md` | 本轮审查报告、返工要求；按需建立 | master | `references/docs/task-card.md` |
 | `docs/ata/` | 两个角色的实践手册、候选经验的收件箱 | master | `references/docs/practices.md` |
 
 ## 按需文档
